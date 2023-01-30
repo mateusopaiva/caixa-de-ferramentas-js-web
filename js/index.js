@@ -46,11 +46,6 @@ function filterTodos(filter) {
   });
   renderTodoList(items);
 }
-/* Todas as funções abaixo estão comentadas.
-  Conforme as aulas forem passando, será necessário que você vá tirando 
-  esses comentários. Para isso basta remover os caracteres de // no inicio de 
-  cada linha necessária
-*/ 
 
 function renderTodoList(items = todoItems) {
   const todoList = document.querySelector(".todos");
