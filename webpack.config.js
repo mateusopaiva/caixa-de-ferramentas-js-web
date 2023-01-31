@@ -1,6 +1,20 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
+const babelLoader = {
+    test: /\.js$/,
+    exclude: /(node_modules)/,
+    use: {
+        loader: "babel-loader",
+        options: {
+            presets: ["@babel/preset-env"],
+            targets: {
+                browsers: ["last 2 versions", "ie 11"],
+            }
+        }
+    }
+};
+
 module.exports = {
     entry: "./js/index.js", // arquivo de entrada
     output: {
@@ -15,13 +29,6 @@ module.exports = {
         })
     ], // array de plugins
     module: {
-        rules:[
-            {
-                test: /\.svg/, // extensaao do arquivo
-                use: {
-                    loader: "svg-url-loader",
-                }
-            },
-        ]
+        rules:[babelLoader],
     }, // objeto de configuracao do modulo
 }
