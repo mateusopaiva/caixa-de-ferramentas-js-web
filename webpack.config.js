@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: "./js/index.js", // arquivo de entrada
@@ -7,6 +8,11 @@ module.exports = {
         filename: "bundle.js", // nome do arquivo de saida
     },
     devServer: { static: "./dist" },// pasta de saida
-    plugins: [], // array de plugins
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: "./index.html",
+            filename: "index.html",
+        })
+    ], // array de plugins
     module: {}, // objeto de configuracao do modulo
 }
