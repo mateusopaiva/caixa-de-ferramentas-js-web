@@ -14,5 +14,14 @@ module.exports = {
             filename: "index.html",
         })
     ], // array de plugins
-    module: {}, // objeto de configuracao do modulo
+    module: {
+        rules:[
+            {
+                test: /\.svg/, // extensaao do arquivo
+                use: {
+                    loader: "svg-url-loader",
+                }
+            },
+        ]
+    }, // objeto de configuracao do modulo
 }

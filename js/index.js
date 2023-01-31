@@ -1,4 +1,5 @@
 //import "./style.css";
+import "../images/icon.svg";
 
 let todoItems = [
   { text: "Estudar Jornada front-end", checked: true, id: 1 },
