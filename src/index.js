@@ -1,4 +1,4 @@
-//import "./style.css";
+import "./style.css";
 
 let todoItems = [
   { text: "Estudar Jornada front-end", checked: true, id: 1 },

@@ -15,8 +15,14 @@ const babelLoader = {
     }
 };
 
+const cssLoader = {
+    test: /\.css$/i,
+    include: path.resolve(__dirname, "src"),
+    use: ["style-loader", "css-loader", "postcss-loader"],
+};
+
 module.exports = {
-    entry: "./js/index.js", // arquivo de entrada
+    entry: "./src/index.js", // arquivo de entrada
     output: {
         path: path.resolve(__dirname, "dist"), // pasta de saida
         filename: "bundle.js", // nome do arquivo de saida
@@ -24,11 +30,11 @@ module.exports = {
     devServer: { static: "./dist" },// pasta de saida
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./index.html",
+            template: "./src/index.html",
             filename: "index.html",
         })
     ], // array de plugins
     module: {
-        rules:[babelLoader],
+        rules:[babelLoader, cssLoader],
     }, // objeto de configuracao do modulo
 }
